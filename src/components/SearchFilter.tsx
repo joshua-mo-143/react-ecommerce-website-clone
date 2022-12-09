@@ -15,12 +15,14 @@ const SearchFilter = ({search}: Props) => {
                 <label htmlFor="" className='flex flex-row gap-2'>
                     <span>Category:</span>
                     <select name="" id="" className='border-2 hover:border-black transition-all'>
+                    <option default value=""></option>
                         <option value="">T-shirts</option>
                     </select>
                 </label>
                 <label htmlFor="" className='flex flex-row gap-2'>
                     <span>Brand:</span>
                     <select name="" id="" className='border-2 hover:border-black transition-all'>
+                    <option default value=""></option>
                         <option value="Ambush">Ambush</option>
                         <option value="Gucci">Gucci</option>
                         <option value="Heliot Emil">Heliot Emil</option>
@@ -32,6 +34,7 @@ const SearchFilter = ({search}: Props) => {
                 <label htmlFor="" className='flex flex-row gap-2'>
                     <span>Size</span>
                     <select name="" id="" className='border-2 hover:border-black transition-all'>
+                        <option default value=""></option>
                         <option value="">XS</option>
                         <option value="">S</option>
                         <option value="">M</option>
