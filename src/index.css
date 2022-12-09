@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.meme {
+    height: 500px;
+    width: 500px;
+}
