@@ -1,4 +1,3 @@
-import React from 'react'
 import HeroHeaderImg from '../assets/hero-header-img.webp'
 type Props = {}
 

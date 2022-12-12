@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import {Routes, Route} from 'react-router-dom'
@@ -7,9 +7,8 @@ import ProductPage from './pages/ProductPage'
 import CartPage from './pages/CartPage'
 import WishlistPage from './pages/WishlistPage'
 import Login from './pages/Login'
-function App() {
-  const [count, setCount] = useState(0)
 
+function App() {
   return (
     <Layout>
       <Routes>

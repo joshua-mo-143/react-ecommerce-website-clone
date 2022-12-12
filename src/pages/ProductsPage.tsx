@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import { Link, useLocation} from 'react-router-dom'
 import axios from 'axios'
 import SearchFilter from '../components/SearchFilter'
-import { ItemSearchFilter, Product } from '../data'
+import { Product } from '../data'
 import {Helmet} from 'react-helmet'
 
 type Props = {}

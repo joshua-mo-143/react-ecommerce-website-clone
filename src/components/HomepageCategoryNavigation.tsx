@@ -1,4 +1,3 @@
-import React from 'react'
 import MenswearHomepageImg from '../assets/menswear-homepage-image.webp'
 import WomenswearHomepageImg from '../assets/womenswear-homepage-image.webp'
 import BeautyHomepageImg from '../assets/beauty-homepage-image.webp'

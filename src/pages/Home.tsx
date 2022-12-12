@@ -1,4 +1,3 @@
-import React from 'react'
 import HeroHeader from '../components/HeroHeader'
 import HomepageCategoryNavigation from '../components/HomepageCategoryNavigation'
 import NewsletterSubscribe from '../components/NewsletterSubscribe'

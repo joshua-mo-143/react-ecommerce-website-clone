@@ -1,5 +1,4 @@
 import React from 'react'
-import { cartStore } from '../zustand'
 import Navigation from './Navigation'
 
 type Props = {

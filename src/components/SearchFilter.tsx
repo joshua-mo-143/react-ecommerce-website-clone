@@ -1,5 +1,3 @@
-import React, { SetStateAction } from 'react'
-import { ItemSearchFilter } from '../data'
 import {useNavigate} from 'react-router-dom'
 
 type Props = {
