@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroHeaderImg from '../assets/hero-header-img.jpg'
+import HeroHeaderImg from '../assets/hero-header-img.webp'
 type Props = {}
 
 const HeroHeader = (props: Props) => {

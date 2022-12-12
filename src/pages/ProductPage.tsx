@@ -4,6 +4,7 @@ import { Product } from '../data'
 import axios from 'axios'
 import { cartStore } from '../zustand'
 import { cartItem } from '../data'
+import {Helmet} from 'react-helmet'
 
 type Props = {}
 
@@ -40,13 +41,14 @@ const ProductPage = (props: Props) => {
       editCart([...cart, newItem]);
     } else {
       editCart([...updatedCart]);
+      
     }
 
   }
 
   useEffect(() => {
     const getData = async () => {
-     await axios.get(`https://hello-rocket-e.shuttleapp.rs/products/${id}`)
+     await axios.get(`https://shuttle-rocket-api.shuttleapp.rs/products/${id}`)
              .then(res => setProductData(res.data));
     }
     getData();
@@ -64,11 +66,15 @@ const ProductPage = (props: Props) => {
   }, [size])
 
   return (
-    <div className='h-screen w-full grid lg:grid-cols-2 lg:grid-rows-1 grid-cols-1 grid-rows-auto'>
+    <>
+            <Helmet>
+    <meta name="description" content="Website product page"/>
+  </Helmet>
+        <div className='h-screen w-full grid lg:grid-cols-2 lg:grid-rows-1 grid-cols-1 grid-rows-auto py-10'>
       <div className='flex flex-col justify-center items-center w-3/5 m-auto max-h-[400px]'>
-        <img src={`/${productData?.imgsrc}`} height="500" className="object-scale-down lg:p-20"/>
+        <img src={`/${productData?.imgsrc}`} height="300px" className="object-scale-down w-3/5 h-4/5 mt-10 lg:mt-10"/>
       </div>
-      <div className='flex flex-col my-20 mx-2 lg:mx-0 gap-8'>
+      <div className='flex flex-col my-20 mx-2 lg:mx-0 gap-8 pb-5'>
         <p className='text-stone-300 tracking-widest'>{productData?.brand.toLocaleUpperCase()}</p>
         <div className='flex flex-col text-md'>
           <h1>{productData?.name}</h1>
@@ -88,6 +94,7 @@ const ProductPage = (props: Props) => {
         <button onClick={handleAddToCart} className='bg-stone-100 hover:bg-stone-300 transition-all px-5 py-2 w-max m-auto lg:m-0'>Add to Cart</button>
       </div>
     </div>
+    </>
   )
 }
 

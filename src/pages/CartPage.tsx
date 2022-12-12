@@ -1,5 +1,7 @@
 import React from 'react'
 import { cartStore } from '../zustand'
+import axios from 'axios'
+import {Helmet} from 'react-helmet'
 
 type Props = {}
 
@@ -10,7 +12,28 @@ const CartPage = (props: Props) => {
     return cart.reduce((total, item) => item.price?? + total, 0)
   },[cart])
 
+  const handlePay = async () => {
+    await axios.get('https://shuttle-rocket-api.shuttleapp.rs/paymentlink')
+    .then(res => window.open(res.data, "_blank"));
+  }
+
+  const removeItem = (id: number, size: string) => {
+
+    let filteredCart = cart.filter(x => {
+      if (x.product_id == id) {
+        return x.size != size;
+      }
+      return x;
+    });
+
+    editCart([...filteredCart]);
+  }
+
   return (
+    <>
+        <Helmet>
+    <meta name="description" content="Website customer cart page"/>
+  </Helmet>
     <div className='w-4/5 m-auto'>
       <p className='text-center py-5 font-bold text-xl lg:text-3xl'>View Your Cart</p>
         {cart.length == 0 ? 
@@ -29,6 +52,7 @@ const CartPage = (props: Props) => {
               <div>
               <p className='text-right'>£{x.price}.00</p>
               <p className='text-xs italic'>{x.quantity > 1 ? `total: £${x.price * x.quantity}.00` : ""}</p>
+              <button className='text-xs cursor-pointer' onClick={() => removeItem(x.product_id, x.size)}>Remove item</button>
               </div>
             </div>
           ))}
@@ -49,11 +73,12 @@ const CartPage = (props: Props) => {
           <p>OVERALL TOTAL</p>
           <p>£{cartTotal + 15}.00</p>
           </div>
-          <button className='py-2 px-5 mt-5 rounded-xl bg-stone-300 hover:rounded-none transition-all hover:font-bold'>Pay with Stripe</button>
+          <button className='py-2 px-5 mt-5 rounded-xl bg-stone-300 hover:rounded-none transition-all hover:font-bold' onClick={handlePay}>Pay with Stripe</button>
           </div>
         </div>
       </div>}
     </div>
+    </>
   )
 }
 

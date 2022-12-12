@@ -22,7 +22,7 @@ const NewsletterSubscribe = (props: Props) => {
                 <label htmlFor="email">
                     <input name="email" type="email" className='lg:px-5 lg:py-2' value={email} onChange={(e) => setEmail(e.target.value)}></input>
                 </label>
-                <button type="submit" className='px-2 lg:px-5 lg:py-2 bg-fuchsia-300'>
+                <button type="submit" className='px-2 lg:px-5 lg:py-2 bg-fuchsia-300' name="Newsletter subscription button">
                     <FontAwesomeIcon icon={faChevronRight}/>
                 </button>
             </form>

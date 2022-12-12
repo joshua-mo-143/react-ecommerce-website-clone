@@ -1,4 +1,5 @@
 import React from 'react'
+import { cartStore } from '../zustand'
 import Navigation from './Navigation'
 
 type Props = {
@@ -6,6 +7,7 @@ type Props = {
 }
 
 const Layout = ({children}: Props) => {
+  
   return (
     <>
     <Navigation/>

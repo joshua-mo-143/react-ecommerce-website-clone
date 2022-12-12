@@ -18,7 +18,6 @@ const Navigation = (props: Props) => {
                 <ul className='flex-none hidden ml-4 lg:flex flex-row gap-4 items-center'>
                 <NavigationLink link="/products?gender=man" text="Mens'"/>
                 <NavigationLink link="/products?gender=woman" text="Womens'"/>
-                <NavigationLink link="/products?gender=man" text="Beauty"/>
         </ul>
         <Link to="/" className='lg:flex-1 lg:text-center ml-2 lg:ml-0'>
           <h1 className='font-bold text-lg'>Luxify.</h1>
@@ -36,15 +35,14 @@ const Navigation = (props: Props) => {
             <div className='ml-2 flex flex-col gap-10 mt-10'>
 
             <div className='flex flex-col gap-0'>
-            <Link to="/cart">Cart ({cart.length})</Link>
-            <Link to="/login">Log In</Link>
-            <Link to="/wishlist">Wishlist</Link>
+            <Link to="/cart" onClick={() => setMobileVis(false)}>Cart ({cart.length})</Link>
+            <Link to="/login" onClick={() => setMobileVis(false)}>Log In</Link>
+            <Link to="/wishlist" onClick={() => setMobileVis(false)}>Wishlist</Link>
             </div>
               <div className='flex flex-col gap-0'> 
               <p className='border-b border-grey-300 w-min'>Products</p>
-              <Link to="/products?gender=man">Mens'</Link>
-              <Link to="/products?gender=man">Womens'</Link>
-              <Link to="/products?gender=man">Beauty</Link>
+              <Link to="/products?gender=man" onClick={() => setMobileVis(false)}>Mens'</Link>
+              <Link to="/products?gender=man" onClick={() => setMobileVis(false)}>Womens'</Link>
 
               </div>
             </div>
