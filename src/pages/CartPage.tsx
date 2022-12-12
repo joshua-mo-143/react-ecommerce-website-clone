@@ -9,7 +9,8 @@ const CartPage = (props: Props) => {
 
   const {cart, editCart} = cartStore();
   const cartTotal = React.useMemo(() => {
-    return cart.reduce((total, item) => item.price?? + total, 0)
+    //@ts-ignore
+    return cart.reduce((total, item) => item.price + total, 0)
   },[cart])
 
   const handlePay = async () => {
