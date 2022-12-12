@@ -1,10 +1,10 @@
 import {useNavigate} from 'react-router-dom'
 
 type Props = {
-    search: string
+  
 }
 
-const SearchFilter = ({search}: Props) => {
+const SearchFilter = (props: Props) => {
 
     const navigate = useNavigate();
 
@@ -24,8 +24,11 @@ const SearchFilter = ({search}: Props) => {
                     <span>Category:</span>
                     <select name="category" id="" className='border-2 hover:border-black transition-all'  onChange={(e) => changeFilter((e.target as HTMLSelectElement).name, (e.target as HTMLSelectElement).value)}>
                     <option selected value=""></option>
-                        <option value="T-shirts">T-shirts</option>
+                    <option value="Button-up Shirt">Button-up Shirts</option>
                         <option value="Coat">Coats</option>
+                        <option value="Camisole">Camisoles</option>
+                        <option value="Jacket">Jackets</option>
+                        <option value="Pants">Pants</option>
                     </select>
                 </label>
                 <label htmlFor="brand" className='flex flex-row gap-2'>

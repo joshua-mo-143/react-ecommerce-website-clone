@@ -31,7 +31,7 @@ const ProductsPage = (props: Props) => {
     <meta name="description" content="Website products page"/>
   </Helmet>
         <h1 className='text-center lg:mr-10 mt-10 text-xl font-bold lg:text-3xl'>View Products</h1>
-            <SearchFilter search={search}/>
+            <SearchFilter/>
         <div className='grid grid-cols-1 lg:grid-cols-4 lg:grid-rows-auto lg:w-4/5 m-auto lg:mt-10 gap-4'>
             {productData.filter((product) => {
                 if (product.gender == gender) {

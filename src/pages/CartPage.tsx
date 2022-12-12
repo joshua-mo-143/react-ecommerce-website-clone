@@ -19,11 +19,11 @@ const CartPage = (props: Props) => {
 
   const removeItem = (id: number, size: string) => {
 
-    let filteredCart = cart.filter(x => {
-      if (x.product_id == id) {
-        return x.size != size;
+    let filteredCart = cart.filter(product => {
+      if (product.product_id == id) {
+        return product.size != size;
       }
-      return x;
+      return product;
     });
 
     editCart([...filteredCart]);
