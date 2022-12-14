@@ -46,6 +46,10 @@ const ProductsPage = (props: Props) => {
                         return product.gender == gender;
                     }
                 }
+
+                if (search == "") {
+                    return product;
+                }
             }).map((product) => (
                 <Link to={`/products/${product.product_id}`} key={product.product_id}>
                     <div className='flex flex-col text-xs font-left'>
