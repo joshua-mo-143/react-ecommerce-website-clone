@@ -14,7 +14,7 @@ const CartPage = (props: Props) => {
   },[cart])
 
   const handlePay = async () => {
-    await axios.get('https://shuttle-rocket-api.shuttleapp.rs/paymentlink')
+    await axios.get('https://shuttle-rocket-api2.shuttleapp.rs/paymentlink')
     .then(res => window.open(res.data, "_blank"));
   }
 

@@ -48,7 +48,7 @@ const ProductPage = (props: Props) => {
 
   useEffect(() => {
     const getData = async () => {
-     await axios.get(`https://shuttle-rocket-api1.shuttleapp.rs/products/${id}`)
+     await axios.get(`https://shuttle-rocket-api2.shuttleapp.rs/products/${id}`)
              .then(res => setProductData(res.data));
     }
     getData();
